@@ -1,7 +1,7 @@
 DEFAULT_ROWS_NUM = 6
 DEFAULT_COLUMNS_NUM = 7
 PATTERN_LENGTH = 4
-DISCS_MAPPING = [' ', '○', '●']
+DISCS_MAPPING = (' ', '○', '●')
 
 class GameBoard():
     def __init__(self, rows=DEFAULT_ROWS_NUM, columns=DEFAULT_COLUMNS_NUM):
