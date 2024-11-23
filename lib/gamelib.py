@@ -1,7 +1,7 @@
 DEFAULT_ROWS_NUM = 6
 DEFAULT_COLUMNS_NUM = 7
 PATTERN_LENGTH = 4
-DISCS_MAPPING = [' ', '○', '●']
+DISCS_MAPPING = (' ', '○', '●')
 
 class GameBoard():
     def __init__(self, rows=DEFAULT_ROWS_NUM, columns=DEFAULT_COLUMNS_NUM):
@@ -60,9 +60,9 @@ class GameBoard():
         Check for vertical winning combinations. Starting from the
         bottom rows
         """
-        for row in range(self.rows-PATTERN_LENGTH, 0, -1):
+        for row in range(self.rows-1, PATTERN_LENGTH-2, -1):
             for column in range(self.columns):
-                vertical = [self.board[l][column] for l in range(row, row+PATTERN_LENGTH-1)]
+                vertical = [self.board[row-i][column] for i in range(PATTERN_LENGTH)]
                 if self._completed_pattern(vertical, player_id):
                     return True
         return False
